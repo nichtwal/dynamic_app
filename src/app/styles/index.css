@@ -1,0 +1,6 @@
+@import url(./lib/normalize.css);
+@import url(./lib/varibles.css);
+
+body {
+    background: var(--pimary-bg);
+}

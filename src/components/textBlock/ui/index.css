@@ -1,0 +1,67 @@
+.description-container,
+.description-container_second,
+.description-container_third {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  overflow: hidden;
+}
+.description-container {
+  margin: 187px 0 0;
+}
+
+.description-container_second {
+  margin: 132.1px 0 0;
+}
+.description-container_third {
+  margin: 130px 0 0;
+}
+.description-wrapper {
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 32px;
+}
+.description-wrapper div p {
+  width: 100%;
+  font-family: "PT Mono";
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 26px;
+  text-align: center;
+}
+.description-container .odd {
+  opacity: 0;
+  transform: translateX(-300px);
+}
+.description-container .even {
+  opacity: 0;
+  transform: translateX(300px);
+}
+
+.description-container_second .odd {
+  opacity: 0;
+  transform: translateX(-300px);
+}
+.description-container_second .even {
+  opacity: 0;
+  transform: translateX(300px);
+}
+.description-container_third .odd {
+  opacity: 0;
+  transform: translateX(-300px);
+}
+.description-container_third .even {
+  opacity: 0;
+  transform: translateX(300px);
+}
+
+@media screen and (max-width:500px) {
+  .description-wrapper div p {
+    font-size: 14px;
+    margin: 0 20px;
+  }
+}

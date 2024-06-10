@@ -1,0 +1,103 @@
+.container {
+  margin: 221.29px 0 0;
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.wrapper {
+  position: relative;
+}
+.roche {
+  width: 561.89px;
+  height: 536.77px;
+}
+.roche img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.paint {
+  opacity: 0;
+  position: absolute;
+  width: 278px;
+  height: 61px;
+  top: 200px;
+  left: 160px;
+}
+.paint img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.mark {
+  opacity: 0;
+  position: absolute;
+  left: 80px;
+  bottom: -50px;
+  width: 67.93px;
+  height: 117.71px;
+}
+.mark img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.wrapper p {
+  position: absolute;
+  bottom: -15px;
+  right: -50px;
+  transform: rotate(-15deg);
+  color: #b1525e;
+  font-family: "PT Mono";
+  font-size: 21px;
+  font-weight: 700;
+  line-height: 26px;
+}
+
+@media screen and (max-width: 1300px) {
+  .container {
+    margin: 180px 0 0;
+  }
+}
+@media screen and (max-width: 768px) {
+  .roche {
+    width: 400px;
+  }
+  .paint {
+    width: 215px;
+    height: 61px;
+    top: 210px;
+    left: 100px;
+  }
+  .mark {
+    left: 55px;
+    bottom: 10px;
+  }
+  .wrapper p {
+    bottom: 45px;
+    right: -75px;
+  }
+}
+
+@media screen and (max-width:500px) {
+  .roche {
+    width: 350px;
+  }
+  .paint {
+    width: 170px;
+    height: 61px;
+    top: 210px;
+    left: 100px;
+  }
+  .mark {
+    left: 55px;
+    bottom: 10px;
+  }
+  .wrapper p {
+    bottom: 60px;
+    right: -20px;
+  }
+}

@@ -1,0 +1,100 @@
+.text-container {
+  position: relative;
+  margin-top: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.text-wrapper {
+  gap: 5px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.text-item_text,
+.text-item_address,
+.text-item_number {
+  text-align: center;
+  font-family: "PT Mono";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 10px;
+  cursor: pointer;
+}
+.text-item_text {
+  color: var(--primary-text-3);
+}
+
+.text-item_address {
+  color: var(--primary-text-1);
+}
+.text-item_number {
+  color: var(--primary-text-0);
+}
+
+.magnifier {
+  position: absolute;
+  width: 190px;
+  height: 100px;
+  border: 2px solid #000;
+  border-radius: 50%;
+  overflow: hidden;
+  pointer-events: none;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  background-color: transparent;
+  background-repeat: no-repeat;
+  /* background-size: 200%; */
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.magnified-text_text,
+.magnified-text_address,
+.magnified-text_number {
+  position: absolute;
+  font-size: 16px;
+  line-height: 1;
+  font-family: "PT Mono", monospace;
+}
+.text-item_text,
+.magnified-text_text {
+  color: var(--primary-text-3);
+}
+
+.text-item_address,
+.magnified-text_address {
+  color: var(--primary-text-1);
+}
+.text-item_number,
+.magnified-text_number {
+  color: var(--primary-text-0);
+}
+.magnified-char {
+  display: inline-block;
+}
+
+@media screen and (max-width:1440px) {
+  .text-item_text,
+.text-item_address,
+.text-item_number {
+  font-size: 9px;
+}
+}
+@media screen and (max-width: 1300px) {
+  .text-wrapper {
+    width: 100%;
+    margin: 0 20px;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .text-item_text,
+  .text-item_address,
+  .text-item_number {
+    font-size: 14px;
+  }
+}

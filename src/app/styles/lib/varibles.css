@@ -1,0 +1,19 @@
+@import url("https://fonts.googleapis.com/css2?family=PT+Mono&display=swap");
+@font-face {
+  font-family: "GENTO DREAM";
+  src: url("../../fonts/GENTO_DREAM.ttf") format("truetype");
+  font-weight: normal;
+}
+
+:root {
+  --font-p: "PT Mono", sans-serif;
+  --font-g: "GENTO DREAM", sans-serif;
+
+  --pimary-bg: #f0eedb;
+
+  --primary-text: #000000;
+  --primary-text-0: #2f0a0a;
+  --primary-text-1: #290b0b;
+  --primary-text-2: #b04a4a;
+  --primary-text-3: #c22727;
+}
