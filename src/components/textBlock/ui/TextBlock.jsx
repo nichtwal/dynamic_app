@@ -19,7 +19,6 @@ const TextBlock = ({ text, className = "" }) => {
     const evenP = document.querySelectorAll(
       `.description-container${className} .even`
     );
-    console.log(startpoint)
     gsap.to(oddP, {
       transform: "translateX(0)",
       opacity: 1,

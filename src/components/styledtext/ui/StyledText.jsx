@@ -6,14 +6,50 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 const StyledText = () => {
   const textRef = React.useRef(null);
   React.useEffect(() => {
-    let endpoint,
-    startpoint
-    if (window.innerWidth < 600) {
-      startpoint = '-300%'
-      endpoint = '-30%'
-    } else {
-      startpoint = '-100%'
-      endpoint = '40%'
+    let endFirstAnimation,
+      startFirstAnimation,
+      endSecondAnimation,
+      startSecondAnimation,
+      endThirdAnimation,
+      startThirdAnimation,
+      startFourthAnimation,
+      endFourthAnimation;
+    if (window.innerWidth > 1600) {
+      startFirstAnimation = "-100% top";
+      endFirstAnimation = "-10% top";
+      startSecondAnimation = "-100% top";
+      endSecondAnimation = "-50% top";
+      startThirdAnimation = "-100% top";
+      endThirdAnimation = "-50% top";
+      startFourthAnimation = "-100% top";
+      endFourthAnimation = "-50% top";
+    } else if (window.innerWidth > 1400) {
+      startFirstAnimation = "-50% top";
+      endFirstAnimation = "20% top";
+      startSecondAnimation = "-20% top";
+      endSecondAnimation = "10% top";
+      startThirdAnimation = "-20% top";
+      endThirdAnimation = "10% top";
+      startFourthAnimation = "-30% top";
+      endFourthAnimation = "10% top";
+    } else if (window.innerWidth > 715) {
+      startFirstAnimation = "-50% top";
+      endFirstAnimation = "top top";
+      startSecondAnimation = "-50% top";
+      endSecondAnimation = "10% top";
+      startThirdAnimation = "top top";
+      endThirdAnimation = "40% top";
+      startFourthAnimation = "-20% top";
+      endFourthAnimation = "40% top";
+    } else if (window.innerWidth < 450 ) {
+      startFirstAnimation = "-100% top";
+      endFirstAnimation = "top top";
+      startSecondAnimation = "-100% top";
+      endSecondAnimation = "10% top";
+      startThirdAnimation = "top top";
+      endThirdAnimation = "40% top";
+      startFourthAnimation = "-20% top";
+      endFourthAnimation = "40% top";
     }
     gsap.registerPlugin(ScrollTrigger);
     const text = textRef.current.textContent;
@@ -32,8 +68,8 @@ const StyledText = () => {
       stagger: 0.2,
       scrollTrigger: {
         trigger: `.${style.text_wrapper}`,
-        start: `${startpoint} top`,
-        end: `${endpoint} top`,
+        start: startFirstAnimation,
+        end: endFirstAnimation,
         scrub: true,
       },
     });
@@ -51,22 +87,22 @@ const StyledText = () => {
    })
    ScrollTrigger.create({
     trigger: `.${style.symbol_wrapper}`,
-    start: `${startpoint} top`,
-    end: "20% top",
+    start: startSecondAnimation,
+    end: endSecondAnimation,
     animation: symbol_top,
     scrub: true,
    })
    ScrollTrigger.create({
     trigger: `.${style.symbol_wrapper}`,
-    start: `${startpoint} top`,
-    end: "20% top",
+    start: startThirdAnimation,
+    end: endThirdAnimation,
     animation: symbol_first,
     scrub: true,
    })
    ScrollTrigger.create({
     trigger: `.${style.symbol_wrapper}`,
-    start: `${startpoint} top`,
-    end: "70% top",
+    start: startFourthAnimation,
+    end: endFourthAnimation,
     animation: symbol_last,
     scrub: true,
    })
