@@ -6,6 +6,15 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 const StyledText = () => {
   const textRef = React.useRef(null);
   React.useEffect(() => {
+    let endpoint,
+    startpoint
+    if (window.innerWidth < 600) {
+      startpoint = '-300%'
+      endpoint = '-30%'
+    } else {
+      startpoint = '-100%'
+      endpoint = '40%'
+    }
     gsap.registerPlugin(ScrollTrigger);
     const text = textRef.current.textContent;
     const letters = text.split("");
@@ -23,8 +32,8 @@ const StyledText = () => {
       stagger: 0.2,
       scrollTrigger: {
         trigger: `.${style.text_wrapper}`,
-        start: "-100% top",
-        end: "40% top",
+        start: `${startpoint} top`,
+        end: `${endpoint} top`,
         scrub: true,
       },
     });
@@ -42,21 +51,21 @@ const StyledText = () => {
    })
    ScrollTrigger.create({
     trigger: `.${style.symbol_wrapper}`,
-    start: "-60% top",
+    start: `${startpoint} top`,
     end: "20% top",
     animation: symbol_top,
     scrub: true,
    })
    ScrollTrigger.create({
     trigger: `.${style.symbol_wrapper}`,
-    start: "-40% top",
+    start: `${startpoint} top`,
     end: "20% top",
     animation: symbol_first,
     scrub: true,
    })
    ScrollTrigger.create({
     trigger: `.${style.symbol_wrapper}`,
-    start: "top top",
+    start: `${startpoint} top`,
     end: "70% top",
     animation: symbol_last,
     scrub: true,

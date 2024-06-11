@@ -101,3 +101,9 @@
     right: -20px;
   }
 }
+@media screen and (max-width:400px) {
+  .wrapper p {
+    bottom: 60px;
+    right: -10px;
+  }
+}

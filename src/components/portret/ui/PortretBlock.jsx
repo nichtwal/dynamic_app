@@ -5,6 +5,15 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 const PortretBlock = () => {
   React.useEffect(() => {
+    let startpoint,
+    endpoint
+    if (window.innerWidth < 600) {
+      startpoint = 100
+      endpoint = -50
+    } else {
+      startpoint = -50
+      endpoint = -70
+    }
     gsap.registerPlugin(ScrollTrigger);
     gsap.set(`.${style.image2}`, {
       clipPath: "polygon(0 0, 100% 0, 100% 0, 0 0)",
@@ -13,8 +22,8 @@ const PortretBlock = () => {
       .timeline({
         scrollTrigger: {
           trigger: `.${style.container}`,
-          start: "-150% top",
-          end: "top top",
+          start: `-${startpoint + 100}% top`,
+          end: `${window.innerWidth < 600 ? 80 : 0}% top`,
           scrub: true,
         },
       })
@@ -28,8 +37,8 @@ const PortretBlock = () => {
     });
     ScrollTrigger.create({
       trigger: `.${style.container}`,
-      start: "-250% top",
-      end: "-70% top",
+      start: `-${startpoint + 250}% top`,
+      end: `-${endpoint + 70}% top`,
       scrub: true,
       animation:littleTicketAnimation
     });

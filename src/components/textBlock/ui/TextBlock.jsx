@@ -4,20 +4,30 @@ import gsap from "gsap";
 const TextBlock = ({ text, className = "" }) => {
   const paragraphRef = React.useRef(null);
   React.useEffect(() => {
+    let startpoint,
+    endpoint
+    if (window.innerWidth < 600) {
+      startpoint = 200
+      endpoint = 20
+    } else {
+      startpoint = 150
+      endpoint = 0
+    }
     const oddP = document.querySelectorAll(
       `.description-container${className} .odd`
     );
     const evenP = document.querySelectorAll(
       `.description-container${className} .even`
     );
+    console.log(startpoint)
     gsap.to(oddP, {
       transform: "translateX(0)",
       opacity: 1,
       stagger: 0.000001,
       scrollTrigger: {
         trigger: `.description-container${className}`,
-        start: className !== "" ? "-400% top" : "-120% top",
-        end: className !== "" ? "-250% top" : "top top",
+        start: className !== "" ?  `-${startpoint * 3}% top` : `-${startpoint}% top`,
+        end: className !== "" ? `-${endpoint +150}% top` : `-${endpoint +50}% top`,
         scrub: true,
       },
     });
@@ -27,8 +37,8 @@ const TextBlock = ({ text, className = "" }) => {
       stagger: 0.000001,
       scrollTrigger: {
         trigger: `.description-container${className}`,
-        start: className !== "" ? "-400% top" : "-120% top",
-        end: className !== "" ? "-250% top" : "top top",
+        start: className !== "" ?  `-${startpoint * 3}% top` : `-${startpoint}% top`,
+        end: className !== "" ? `-${endpoint +50}% top` : `-${endpoint +50}% top`,
         scrub: true,
       },
     });

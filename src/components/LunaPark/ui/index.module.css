@@ -66,3 +66,15 @@
     top: 0;
   }
 }
+@media screen and (max-width:500px) {
+  .wrapper {
+    max-width: 500px;
+    margin: 0 40px;
+  }
+  .wrapper div:last-child {
+    width: 100px;
+    height: 200px;
+    right: -40px;
+    top: 0;
+  }
+} 

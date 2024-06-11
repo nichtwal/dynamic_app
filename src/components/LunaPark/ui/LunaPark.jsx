@@ -5,6 +5,12 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 const LunaPark = () => {
   React.useEffect(() => {
+    let startpoint, endpoint
+    if (window.innerWidth < 600) {
+      startpoint = 500
+    } else { 
+      startpoint = 0
+    }
     gsap.registerPlugin(ScrollTrigger);
     const photoAnimation = gsap.to(`.${style.photo}`, {
       transform:'translate3d(0px, 0px, 0px)',
@@ -16,14 +22,14 @@ const LunaPark = () => {
     })
     ScrollTrigger.create({
       trigger: `.${style.container}`,
-      start: "-200% top",
-      end: "-20% top",
+      start: `-${startpoint + 200}% top`,
+      end: `-20% top`,
       animation: photoAnimation,
       scrub: true,
     })
     ScrollTrigger.create({
       trigger: `.${style.container}`,
-      start: "-200% top",
+      start: `-${startpoint + 200}% top`,
       end: "-20% top",
       animation: ticketAnimation,
       scrub: true,
